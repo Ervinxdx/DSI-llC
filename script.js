@@ -77,7 +77,7 @@ function btnIniciarSesion() {
             }
         }
     }else{
-        return alert("Usuario incorrecto Ya tehas registrado?")
+        return alert("Usuario incorrecto ya tehas registrado?")
     }
 
     
