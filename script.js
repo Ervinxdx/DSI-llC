@@ -21,13 +21,24 @@ function eliminarItem(button) {
 
 
 
-
-
-function btnRegistrate(){
+function recuperandoLosDatos(){
     let user = document.querySelector('#user').value
     let password = document.querySelector('#password').value
     let userLocal =window.localStorage.getItem('usuarios')
     let usuarios = []
+    let datos =[user,password,userLocal,usuarios]
+    return datos
+
+}
+
+
+
+function btnRegistrate(){
+
+
+    let [user,password,userLocal,usuarios] = recuperandoLosDatos()
+
+    
     if (userLocal){
         usuarios = JSON.parse(userLocal)
         for (let usuario of usuarios){
@@ -50,11 +61,9 @@ function btnRegistrate(){
 
 
 function btnIniciarSesion() {
-    let user = document.querySelector('#user').value
-    let password = document.querySelector('#password').value
 
-    let userLocal = window.localStorage.getItem('usuarios')
-    let usuarios = []
+    let [user,password,userLocal,usuarios] = recuperandoLosDatos()
+
     if (userLocal){
         usuarios = JSON.parse(userLocal)
         console.log(usuarios)
@@ -68,12 +77,17 @@ function btnIniciarSesion() {
             }
         }
     }else{
-        return alert("Usuario incorrect Ya tehas registrado?")
+        return alert("Usuario incorrecto Ya tehas registrado?")
     }
 
     
 
 }
+
+
+
+
+
 let app = document.querySelector('#typewriter');
 
 let typewriter = new Typewriter(app,{

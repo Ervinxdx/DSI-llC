@@ -139,7 +139,8 @@
     animation: img-login;
     animation-duration: 3s;
     animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
 
 }
 .btn-google:hover{
@@ -155,7 +156,7 @@
     }
     100%{
         transform: translateY(0px);
-        box-shadow: 0 0 10px blueviolet;
+        box-shadow: 0 0 10px cyan;
     }
 }
 
